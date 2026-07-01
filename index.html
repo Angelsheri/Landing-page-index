@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b3a4c" />
+<title>Stratum Hosting</title>
+<meta name="description" content="High-performance hosting services with built-in security that are easy to use, fairly priced, and ready in seconds." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Phosphor Bold icons -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand" aria-label="Stratum home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 22 L16 4 L28 22 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M8 26 L24 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M11 22 L21 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>Stratum</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="#faq">Docs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="/login" class="btn btn-ghost">Log in</a>
+      <a href="/pricing" class="btn btn-primary">
+        <span>Get Started</span>
+        <i class="ph-bold ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <i class="ph-bold ph-list"></i>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <a href="#" class="eyebrow reveal">
+      <span class="eyebrow-dot"></span>
+      <span>Built for builders who need to ship with certainty</span>
+      <i class="ph-bold ph-arrow-right"></i>
+    </a>
+
+    <h1 class="hero-title reveal">
+      Deploy faster, iterate quicker,<br />
+      <span class="grad">and ship with certainty</span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      Get high-performance hosting services with built-in security that is easy to use, fairly priced and ready in seconds.
+    </p>
+
+    <div class="hero-cta reveal">
+      <a href="/pricing" class="btn btn-primary btn-lg">
+        <span>Launch Now</span>
+        <i class="ph-bold ph-arrow-right"></i>
+      </a>
+      <a href="#features" class="btn btn-secondary btn-lg">
+        <i class="ph-bold ph-play-circle"></i>
+        <span>Learn More</span>
+      </a>
+    </div>
+
+    <ul class="hero-check reveal">
+      <li><i class="ph-bold ph-check-circle"></i> 24-hour refund policy in all regions</li>
+      <li><i class="ph-bold ph-check-circle"></i> Rented dedicated hardware</li>
+      <li><i class="ph-bold ph-check-circle"></i> 99% UPTIME</li>
+    </ul>
+
+    <!-- Product mockup -->
+    <div class="hero-mockup reveal">
+      <div class="mockup-window">
+        <div class="mockup-bar">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-url"><i class="ph-bold ph-lock-simple"></i> app.stratum.host / production</div>
+          <div class="mockup-actions">
+            <button><i class="ph-bold ph-arrow-clockwise"></i></button>
+            <button><i class="ph-bold ph-dots-three"></i></button>
+          </div>
+        </div>
+
+        <div class="mockup-body">
+          <aside class="mockup-side">
+            <div class="mockup-side-brand"><span class="mockup-logo"></span> Stratum</div>
+            <nav class="mockup-nav">
+              <a class="active"><i class="ph-bold ph-squares-four"></i> Overview</a>
+              <a><i class="ph-bold ph-rocket-launch"></i> Deployments</a>
+              <a><i class="ph-bold ph-hard-drives"></i> Services</a>
+              <a><i class="ph-bold ph-chart-line-up"></i> Metrics</a>
+              <a><i class="ph-bold ph-shield-check"></i> Security</a>
+              <a><i class="ph-bold ph-key"></i> Env vars</a>
+              <a><i class="ph-bold ph-gear-six"></i> Settings</a>
+            </nav>
+          </aside>
+
+          <section class="mockup-main">
+            <div class="mockup-main-header">
+              <div>
+                <p class="mockup-tag"><span class="pulse"></span> Production &middot; healthy</p>
+                <h3>api-gateway</h3>
+              </div>
+              <div class="mockup-header-actions">
+                <span class="chip"><i class="ph-bold ph-git-branch"></i> main</span>
+                <span class="chip chip-live"><i class="ph-bold ph-circle-wavy-check"></i> Deployed 12s ago</span>
+              </div>
+            </div>
+
+            <div class="mockup-metrics">
+              <div class="metric">
+                <p class="metric-label">CPU</p>
+                <p class="metric-value">32<small>%</small></p>
+                <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none"><path d="M0 22 L15 18 L30 24 L45 12 L60 16 L75 8 L90 14 L105 6 L120 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="metric">
+                <p class="metric-label">Memory</p>
+                <p class="metric-value">1.8<small>GB</small></p>
+                <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none"><path d="M0 20 L15 22 L30 18 L45 16 L60 20 L75 14 L90 18 L105 12 L120 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="metric">
+                <p class="metric-label">Requests / s</p>
+                <p class="metric-value">2,481</p>
+                <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none"><path d="M0 24 L15 20 L30 22 L45 14 L60 18 L75 10 L90 12 L105 6 L120 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="metric">
+                <p class="metric-label">Latency p95</p>
+                <p class="metric-value">42<small>ms</small></p>
+                <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none"><path d="M0 14 L15 18 L30 12 L45 16 L60 10 L75 14 L90 8 L105 12 L120 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+
+            <div class="mockup-log">
+              <p class="log-title"><i class="ph-bold ph-terminal-window"></i> Live deploy log</p>
+              <pre><code><span class="l-time">14:22:03</span> <span class="l-info">▶</span> Pulling from git@github.com:acme/api-gateway#main
+<span class="l-time">14:22:04</span> <span class="l-ok">✓</span> Detected Node.js 20 · bun install
+<span class="l-time">14:22:11</span> <span class="l-ok">✓</span> Built image (14.2 MB, 7 layers)
+<span class="l-time">14:22:12</span> <span class="l-info">▶</span> Rolling out to <b>fra-1</b>, <b>ash-1</b>, <b>sin-1</b>
+<span class="l-time">14:22:15</span> <span class="l-ok">✓</span> Healthy · 0 downtime · <b>ready</b></code></pre>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="mockup-shadow" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LOGO STRIP ═══════════════ -->
+<section class="strip">
+  <div class="container">
+    <p class="strip-label">Trusted by teams shipping on</p>
+    <div class="strip-logos">
+      <img src="images/nodejs.svg" alt="Node.js" />
+      <img src="images/typescript.svg" alt="TypeScript" />
+      <img src="images/react.svg" alt="React" />
+      <img src="images/nextjs.svg" alt="Next.js" />
+      <img src="images/python.svg" alt="Python" />
+      <img src="images/docker.svg" alt="Docker" />
+      <img src="images/rust.svg" alt="Rust" />
+      <img src="images/go.svg" alt="Go" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="section" id="services">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-stack"></i> Our Services</p>
+      <h2>A focused set of hosting services built to run the things you actually ship.</h2>
+      <p class="sec-sub">Powerful hosting without the complexity.</p>
+    </header>
+
+    <div class="grid grid-4">
+      <a class="tile" href="/discord">
+        <div class="tile-icon"><i class="ph-bold ph-discord-logo"></i></div>
+        <h3>Discord Bot Hosting</h3>
+        <p>Keep your bot online around the clock with automatic restarts, instant scaling, and zero-downtime deploys.</p>
+        <span class="tile-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
+      </a>
+      <a class="tile" href="/telegram">
+        <div class="tile-icon"><i class="ph-bold ph-paper-plane-tilt"></i></div>
+        <h3>Telegram Bot Hosting</h3>
+        <p>Run polling or webhook-based bots on free HTTPS endpoints with the same low-latency network as everything else on Stratum.</p>
+        <span class="tile-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
+      </a>
+      <a class="tile" href="/game-server">
+        <div class="tile-icon"><i class="ph-bold ph-game-controller"></i></div>
+        <h3>Game Server Hosting</h3>
+        <p>Dedicated CPU and NVMe storage keep tick rates stable, with one-click restarts and persistent world saves.</p>
+        <span class="tile-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
+      </a>
+      <a class="tile" href="/static-web">
+        <div class="tile-icon"><i class="ph-bold ph-globe-hemisphere-west"></i></div>
+        <h3>Static Web Hosting</h3>
+        <p>Ship sites straight from your repository with global delivery, free HTTPS, and instant cache invalidation.</p>
+        <span class="tile-arrow"><i class="ph-bold ph-arrow-up-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURES (why + features consolidated) ═══════════════ -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-sparkle"></i> Features</p>
+      <h2>Every plan ships with the full stack, with no add-ons and no surprises.</h2>
+      <p class="sec-sub">Monitor live metrics &amp; redeploy in one click. Also manage every service from a singular personalized panel.</p>
+    </header>
+
+    <div class="feat-grid">
+      <article class="feat feat-lg reveal">
+        <div class="feat-icon"><i class="ph-bold ph-rocket-launch"></i></div>
+        <h3>Instant Deployment</h3>
+        <p>Deploy your bot or application in seconds. Connect your repository, set your environment variables, and push. Stratum handles the rest automatically.</p>
+        <div class="feat-visual">
+          <div class="deploy-anim">
+            <span class="deploy-step"><i class="ph-bold ph-git-commit"></i> git push</span>
+            <span class="deploy-arrow"><i class="ph-bold ph-arrow-right"></i></span>
+            <span class="deploy-step"><i class="ph-bold ph-package"></i> Build</span>
+            <span class="deploy-arrow"><i class="ph-bold ph-arrow-right"></i></span>
+            <span class="deploy-step deploy-step-live"><i class="ph-bold ph-broadcast"></i> Live</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-icon"><i class="ph-bold ph-cpu"></i></div>
+        <h3>High Performance Hardware</h3>
+        <p>Dedicated NVMe SSDs and AMD EPYC processors on every plan. Guaranteed CPU allocation with no noisy neighbors stealing your resources during peak load.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-icon"><i class="ph-bold ph-shield-check"></i></div>
+        <h3>99.9% Uptime Guarantee</h3>
+        <p>Every plan is backed by a contractual SLA. Infrastructure is redundant at every layer, including power, networking, and compute, so your services stay online even when hardware fails.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-icon"><i class="ph-bold ph-chart-line-up"></i></div>
+        <h3>DDoS Protection</h3>
+        <p>Enterprise-grade DDoS mitigation included on every plan at no extra cost. Network scrubbing centers absorb and filter malicious traffic before it reaches your instance.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-icon"><i class="ph-bold ph-code"></i></div>
+        <h3>GitHub Integration</h3>
+        <p>Connect your GitHub repository to Stratum. Push to deploy. Every commit triggers an automatic build and rolls out to your instance without any manual steps.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-icon"><i class="ph-bold ph-sparkle"></i></div>
+        <h3>AI Assistant</h3>
+        <p>Ask questions, diagnose issues, and optimize your deployment using an AI assistant trained on your deployment data, logs, and configuration history.</p>
+      </article>
+
+      <article class="feat feat-lg reveal">
+        <div class="feat-icon"><i class="ph-bold ph-currency-dollar"></i></div>
+        <h3>Transparent pricing, no gatekeeping</h3>
+        <p>Every feature is included in every plan. There are no hidden add-ons, no surprise overages, and no fine print that gatekeep core functionality. You pay for resources, not access to features that should already be standard.</p>
+        <div class="feat-visual pricing-preview">
+          <div class="pp-row"><span>Base compute</span><b>$1.99<small>/mo</small></b></div>
+          <div class="pp-row muted"><span>DDoS protection</span><span>Included</span></div>
+          <div class="pp-row muted"><span>SSL &amp; custom domains</span><span>Included</span></div>
+          <div class="pp-row muted"><span>Observability &amp; alerts</span><span>Included</span></div>
+          <div class="pp-row muted"><span>Autoscaling</span><span>Included</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-stratum">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-star"></i> Why Stratum?</p>
+      <h2>There are a lot of hosting providers out there. Here is what sets Stratum apart.</h2>
+    </header>
+    <div class="grid grid-4">
+      <article class="tile reveal">
+        <div class="tile-icon"><i class="ph-bold ph-cpu"></i></div>
+        <h3>Performance that holds up</h3>
+        <p>Stratum runs on dedicated AMD EPYC processors and NVMe storage with guaranteed CPU allocation on every plan.</p>
+      </article>
+      <article class="tile reveal">
+        <div class="tile-icon"><i class="ph-bold ph-shield-check"></i></div>
+        <h3>Reliability you can count on</h3>
+        <p>A 99.9% uptime SLA is not just a number. It is a contractual commitment backed by redundant infrastructure and automatic failover.</p>
+      </article>
+      <article class="tile reveal">
+        <div class="tile-icon"><i class="ph-bold ph-currency-dollar"></i></div>
+        <h3>Transparent, honest pricing</h3>
+        <p>Every feature is included in every plan. There are no hidden add-ons and no surprise overages.</p>
+      </article>
+      <article class="tile reveal">
+        <div class="tile-icon"><i class="ph-bold ph-users-three"></i></div>
+        <h3>Support that actually helps</h3>
+        <p>Our community and support channels are run by people who understand infrastructure and can help when it matters most.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FRAMEWORKS ═══════════════ -->
+<section class="section" id="frameworks">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-code-block"></i> Frameworks</p>
+      <h2>Reliably deploy on Stratum with any framework</h2>
+      <p class="sec-sub">Auto-detected build packs for 25+ languages and frameworks. Bring your own Dockerfile any time.</p>
+    </header>
+
+    <div class="fw-carousel reveal">
+      <button class="fw-nav fw-prev" type="button" aria-label="Previous">
+        <i class="ph-bold ph-caret-left"></i>
+      </button>
+
+      <div class="fw-viewport">
+        <div class="fw-track" id="fwTrack">
+          <div class="fw-page">
+            <div class="fw-cell"><img src="images/nodejs.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="fw-cell"><img src="images/typescript.svg" alt="TypeScript"><span>TypeScript</span></div>
+            <div class="fw-cell"><img src="images/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+            <div class="fw-cell"><img src="images/python.svg" alt="Python"><span>Python</span></div>
+            <div class="fw-cell"><img src="images/bun.svg" alt="Bun"><span>Bun</span></div>
+          </div>
+          <div class="fw-page">
+            <div class="fw-cell"><img src="images/deno.svg" alt="Deno"><span>Deno</span></div>
+            <div class="fw-cell"><img src="images/java.svg" alt="Java"><span>Java</span></div>
+            <div class="fw-cell"><img src="images/csharp.png" alt="C#"><span>C#</span></div>
+            <div class="fw-cell"><img src="images/php.svg" alt="PHP"><span>PHP</span></div>
+            <div class="fw-cell"><img src="images/ruby.svg" alt="Ruby"><span>Ruby</span></div>
+          </div>
+          <div class="fw-page">
+            <div class="fw-cell"><img src="images/html.svg" alt="HTML"><span>HTML</span></div>
+            <div class="fw-cell"><img src="images/css.svg" alt="CSS"><span>CSS</span></div>
+            <div class="fw-cell"><img src="images/react.svg" alt="React"><span>React</span></div>
+            <div class="fw-cell"><img src="images/nextjs.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="fw-cell"><img src="images/vuejs.svg" alt="Vue"><span>Vue</span></div>
+          </div>
+          <div class="fw-page">
+            <div class="fw-cell"><img src="images/svelte.svg" alt="Svelte"><span>Svelte</span></div>
+            <div class="fw-cell"><img src="images/astro.svg" alt="Astro"><span>Astro</span></div>
+            <div class="fw-cell"><img src="images/docker.svg" alt="Docker"><span>Docker</span></div>
+            <div class="fw-cell"><img src="images/go.svg" alt="Go"><span>Go</span></div>
+            <div class="fw-cell"><img src="images/rust.svg" alt="Rust"><span>Rust</span></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="fw-nav fw-next" type="button" aria-label="Next">
+        <i class="ph-bold ph-caret-right"></i>
+      </button>
+    </div>
+
+    <div class="fw-dots" id="fwDots" role="tablist" aria-label="Framework pages"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECURITY ═══════════════ -->
+<section class="section section-dark-soft" id="security">
+  <div class="container">
+    <div class="sec-two">
+      <div class="reveal">
+        <p class="kicker"><i class="ph-bold ph-shield-star"></i> Security</p>
+        <h2>Our Approach to Multi-Layered Security</h2>
+        <p class="sec-sub">Our security at Stratum is delivered through layered controls that protect your service at every stage, from secure foundations to rapid response.</p>
+        <div class="sec-stats">
+          <div><b>SOC 2</b><span>Type II ready</span></div>
+          <div><b>ISO 27001</b><span>Aligned</span></div>
+          <div><b>GDPR</b><span>Compliant</span></div>
+        </div>
+      </div>
+
+      <ol class="sec-steps reveal">
+        <li>
+          <div class="sec-step-num">01</div>
+          <div>
+            <h3>Foundational Security</h3>
+            <p>Security is built into our service by default. We secure your infrastructure with hardened configurations, protected networks, controlled access, and resilient backups, creating a secure baseline before any additional controls are applied.</p>
+          </div>
+        </li>
+        <li>
+          <div class="sec-step-num">02</div>
+          <div>
+            <h3>Preventative Security</h3>
+            <p>We help you reduce risk by layering additional protections around your service. These preventative measures reduce attack surface and strengthen defenses as your environment scales, ensuring that growth does not introduce new vulnerabilities.</p>
+          </div>
+        </li>
+        <li>
+          <div class="sec-step-num">03</div>
+          <div>
+            <h3>Detection and Monitoring</h3>
+            <p>Our team of AI experts provide continuous monitoring to identify threats early. We analyse activity across your service and alert you to potential issues before they impact performance, availability, or data.</p>
+          </div>
+        </li>
+        <li>
+          <div class="sec-step-num">04</div>
+          <div>
+            <h3>Response and Recovery</h3>
+            <p>If an incident occurs, our AI experts act quickly to contain, investigate, and recover. We support restoration and remediation to minimize disruption and improve your overall security posture after every event.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT US ═══════════════ -->
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div class="stat reveal">
+      <p class="stat-num" data-count="99.9" data-suffix="%">0%</p>
+      <p class="stat-label">Uptime across all plans &amp; services</p>
+    </div>
+    <div class="stat reveal">
+      <p class="stat-num" data-count="10" data-suffix="Gbps">0</p>
+      <p class="stat-label">Locations to deploy your projects from</p>
+    </div>
+    <div class="stat reveal">
+      <p class="stat-num">24/7</p>
+      <p class="stat-label">Monitoring and alerts</p>
+    </div>
+    <div class="stat reveal">
+      <p class="stat-num" data-count="5" data-suffix="+">0</p>
+      <p class="stat-label">Languages and frameworks supported</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about-us">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-book-open-text"></i> About Us</p>
+      <h2>Stratum started as a small duo of developers who kept hitting the same wall.</h2>
+      <p class="sec-sub">We wanted to fix that. So we built a platform that gives developers solid infrastructure without the enterprise mess, with clear pricing, simple tools, and support from people who actually understand what you are working on.</p>
+    </header>
+    <div class="reveal">
+      <p>Our goal is simple. Make hosting fast, honest, and easy to use for anyone building online, whether that is a Discord bot, an API, a game server, or something completely new. We are a small team, and we treat every project on our platform like it matters, because it does.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="section" id="faq">
+  <div class="container faq-container">
+    <header class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-question"></i> FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+      <p class="sec-sub">Everything you need to know about hosting your bots, game servers, and apps on Stratum.</p>
+    </header>
+
+    <div class="faq-list">
+      <details class="faq">
+        <summary>
+          <span>Can I host my Discord bot on Stratum?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>Yes. Stratum is built for Discord bots in Node.js, Python, Java, Go, and more. Connect your repo, add your bot token as an environment variable, and deploy. Your bot stays online 24/7 with automatic restarts and instant scaling.</p>
+      </details>
+      <details class="faq">
+        <summary>
+          <span>Does Stratum support Telegram bot hosting?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>Yes. Both long polling and webhooks are supported, with free HTTPS endpoints and the same low-latency network as the rest of Stratum.</p>
+      </details>
+      <details class="faq">
+        <summary>
+          <span>What kinds of game servers can I run?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>Minecraft, Rust, Valheim, CS2, and custom builds. Dedicated CPU and NVMe storage keep tick rates stable, while DDoS protection and one-click restarts help keep everything available.</p>
+      </details>
+      <details class="faq">
+        <summary>
+          <span>How fast is the hosting hardware?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>Stratum uses dedicated AMD EPYC processors, NVMe SSD storage, and ECC memory — never shared. The infrastructure is designed to deliver consistent performance under load.</p>
+      </details>
+      <details class="faq">
+        <summary>
+          <span>What uptime can I expect?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>A contractual 99.9% uptime SLA, backed by redundant infrastructure, health checks, and automatic failover when something goes wrong.</p>
+      </details>
+      <details class="faq">
+        <summary>
+          <span>How does deployment work?</span>
+          <i class="ph-bold ph-plus faq-icon"></i>
+        </summary>
+        <p>Connect GitHub. Every push builds, containerizes, and rolls out live with zero downtime. Logs stream live, rollbacks are simple, and your deployment history stays mapped to your Git history.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-grid" aria-hidden="true"></div>
+      <div class="cta-body">
+        <p class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          <span>Ready when you are</span>
+        </p>
+        <h2>Get started now for just <span class="grad">$1.99</span>!</h2>
+        <p class="cta-sub">Deploy your first service on Stratum today. No setup fees, and no long-term commitments, just fast &amp; reliable hosting from the moment you push.</p>
+        <div class="cta-buttons">
+          <a href="/pricing" class="btn btn-primary btn-lg">
+            <span>Get Started for $1.99</span>
+            <i class="ph-bold ph-arrow-right"></i>
+          </a>
+          <a href="https://discord.gg/" class="btn btn-ghost-light btn-lg">
+            <i class="ph-bold ph-discord-logo"></i>
+            <span>Join the community</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M4 22 L16 4 L28 22 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M8 26 L24 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M11 22 L21 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span>Stratum</span>
+      </a>
+      <p class="footer-tag">Get more updates.</p>
+      <p class="footer-tag">Sign up for our newsletter and you'll be the first to hear about new features.</p>
+      <div class="footer-social">
+        <a href="https://discord.gg/" aria-label="Discord"><i class="ph-bold ph-discord-logo"></i></a>
+        <a href="https://github.com/" aria-label="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+        <a href="https://twitter.com/" aria-label="Twitter / X"><i class="ph-bold ph-x-logo"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <p class="fc-h">Product</p>
+        <a href="#features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="#">Changelog</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div>
+        <p class="fc-h">Resources</p>
+        <a href="#faq">Docs</a>
+        <a href="#">Documentation</a>
+        <a href="#">API Reference</a>
+        <a href="#">Status</a>
+      </div>
+      <div>
+        <p class="fc-h">Company</p>
+        <a href="#about-us">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div>
+        <p class="fc-h">Legal</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">EULA</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; Stratum Hosting 2026. All rights reserved.</p>
+    <p class="footer-status"><span class="status-dot"></span> All systems operational</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
